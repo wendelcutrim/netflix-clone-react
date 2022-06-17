@@ -1,5 +1,6 @@
-import "./App.css";
-
+import "./netflix.css";
+import Logo from "./assets/img/logo.png";
+import Motivo1 from "./assets/img/motivo-1.png";
 /* function App() {
   const nome = "Wendel";
   const title = "Teste";
@@ -19,7 +20,7 @@ function App() {
     <div>
       <header>
       <div>
-        <img src="images/logo.png" alt="Logo" />
+        <img src={Logo} alt="Logo" />
       </div>
       <div id="login">
         <select id="idioma">
@@ -44,8 +45,8 @@ function App() {
         <button>Vamos Lá</button>
       </div>
     </section>
-    <hr class="divisor" />
-    <section class="motivos">
+    <hr className="divisor" />
+    <section className="motivos">
       <div>
         <h1>Aproveite na TV.</h1>
         <p>
@@ -54,11 +55,11 @@ function App() {
         </p>
       </div>
       <div>
-        <img src="/images/motivo-1.png" alt="Motivo 1" />
+        <img src={Motivo1} alt="Motivo 1"/>
       </div>
     </section>
-    <hr class="divisor" />
-    <section class="motivos alterna">
+    <hr className="divisor" />
+    <section className="motivos alterna">
       <div>
         <h1>Aproveite na TV.</h1>
         <p>
@@ -67,11 +68,11 @@ function App() {
         </p>
       </div>
       <div>
-        <img src="/images/motivo-2.png" alt="Motivo 1" />
+        <img src={Motivo1} alt="Motivo 1" />
       </div>
     </section>
-    <hr class="divisor" />
-    <section class="motivos">
+    <hr className="divisor" />
+    <section className="motivos">
       <div>
         <h1>Aproveite na TV.</h1>
         <p>
@@ -80,11 +81,11 @@ function App() {
         </p>
       </div>
       <div>
-        <img src="/images/motivo-1.png" alt="Motivo 1" />
+        <img src={Motivo1} alt="Motivo 1" />
       </div>
     </section>
-    <hr class="divisor" />
-    <section class="motivos alterna">
+    <hr className="divisor" />
+    <section className="motivos alterna">
       <div>
         <h1>Aproveite na TV.</h1>
         <p>
@@ -93,10 +94,10 @@ function App() {
         </p>
       </div>
       <div>
-        <img src="/images/motivo-1.png" alt="Motivo 1" />
+        <img src={Motivo1} alt="Motivo 1" />
       </div>
     </section>
-    <hr class="divisor" />
+    <hr className="divisor" />
     </div>
   );
 }
