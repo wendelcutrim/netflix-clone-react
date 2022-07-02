@@ -4,7 +4,6 @@
 
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap");
 
-
 * {
   padding: 0;
   margin: 0;
@@ -41,6 +40,13 @@ header #login select {
   padding: 10px 20px;
 }
 
+header #login select option {
+  background: rgb(176, 176, 176);
+  color: #fff;
+  font-size: 14px;
+  padding: 10px 20px;
+}
+
 header #login button {
   background: #e50914;
   color: #fff;
@@ -51,9 +57,7 @@ header #login button {
 }
 
 section#banner {
-  background-image: url("./assets/img//banner.jpg");
-  background-size: cover;
-  background-repeat: no-repeat;
+  background-image: url("./assets/img/banner.jpg");
   color: #fff;
   height: 80vh;
   display: flex;
@@ -80,6 +84,16 @@ section#banner h1 {
   font-size: 70px;
   position: relative;
   z-index: 1;
+  text-align: center;
+}
+
+section#banner h2 {
+  margin: 10px 0 20px 0;
+  font-weight: 400;
+}
+
+section#banner p {
+  margin: 0 0 10px 0;
 }
 
 section#banner div {
@@ -94,6 +108,7 @@ section#banner div input {
   width: 80%;
   font-size: 20px;
   border-radius: 4px;
+  padding: 10px;
 }
 
 section#banner div button {
@@ -103,6 +118,7 @@ section#banner div button {
   font-size: 22px;
   border: none;
   border-radius: 4px;
+  margin: 0 3px;
 }
 
 section.motivos {

@@ -35,11 +35,11 @@ function App() {
         Filmes, séries e muito <br />
         mais. Sem limites.
       </h1>
-      <h3>Assista onde quiser. Cancele quando quiser.</h3>
-      <small
-        >Pronto para assistir? Informe seu email para criar ou reiniciar sua
+      <h2>Assista onde quiser. Cancele quando quiser.</h2>
+      <p>
+        Pronto para assistir? Informe seu email para criar ou reiniciar sua
         assinatura.
-      </small>
+      </p>
       <div>
         <input type="email" placeholder="Email" />
         <button>Vamos Lá</button>
