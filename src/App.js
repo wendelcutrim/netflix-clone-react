@@ -1,6 +1,11 @@
 import "./netflix.css";
 import Logo from "./assets/img/logo.png";
 import Motivo1 from "./assets/img/motivo-1.png";
+
+import Button from "./components/Button";
+import SectionMotivos from "./components/SectionMotivos";
+import Divisor from './components/Divisor';
+
 /* function App() {
   const nome = "Wendel";
   const title = "Teste";
@@ -15,7 +20,10 @@ import Motivo1 from "./assets/img/motivo-1.png";
   );
 }
  */
+
 function App() {
+  const Title = <h1>Titulo</h1>;
+
   return (
     <div>
       <header>
@@ -27,7 +35,8 @@ function App() {
           <option value="PT">Português</option>
           <option value="ING">Ingles</option>
         </select>
-        <button>Entrar</button>
+        <Button variante="success" text="Entrar"/>
+        {/* <button>Entrar</button> */}
       </div>
     </header>
     <section id="banner">
@@ -42,11 +51,19 @@ function App() {
       </p>
       <div>
         <input type="email" placeholder="Email" />
-        <button>Vamos Lá</button>
+        <Button variante="alert" text="Vamos Lá" />
+        {/* <button>Vamos Lá</button> */}
       </div>
     </section>
-    <hr className="divisor" />
-    <section className="motivos">
+    <Divisor styleClassDivisor="divisor" />
+    <SectionMotivos 
+      styleClass="motivos" 
+      title="Aproveite na TV." 
+      description="Assista em Smart TVs, PlayStation, Xbox, Chromecast, Apple TV, aparelhos de Blu-ray e outros dispositivos." 
+      image={Motivo1} 
+      imageAlt="Motivo 1"
+    />
+    {/* <section className="motivos">
       <div>
         <h1>Aproveite na TV.</h1>
         <p>
@@ -57,9 +74,17 @@ function App() {
       <div>
         <img src={Motivo1} alt="Motivo 1"/>
       </div>
-    </section>
-    <hr className="divisor" />
-    <section className="motivos alterna">
+    </section> */}
+    <Divisor styleClassDivisor="divisor" />
+    <SectionMotivos 
+      styleClass="motivos alterna" 
+      title="Aproveite na TV." 
+      description="Assista em Smart TVs, PlayStation, Xbox, Chromecast, Apple TV, aparelhos de Blu-ray e outros dispositivos." 
+      image={Motivo1} 
+      imageAlt="Motivo 1" 
+    />
+    <Divisor styleClassDivisor="divisor" />
+    {/* <section className="motivos">
       <div>
         <h1>Aproveite na TV.</h1>
         <p>
@@ -70,34 +95,13 @@ function App() {
       <div>
         <img src={Motivo1} alt="Motivo 1" />
       </div>
-    </section>
-    <hr className="divisor" />
-    <section className="motivos">
-      <div>
-        <h1>Aproveite na TV.</h1>
-        <p>
-          Assista em Smart TVs, PlayStation, Xbox, Chromecast, Apple TV,
-          aparelhos de Blu-ray e outros dispositivos.
-        </p>
-      </div>
-      <div>
-        <img src={Motivo1} alt="Motivo 1" />
-      </div>
-    </section>
-    <hr className="divisor" />
-    <section className="motivos alterna">
-      <div>
-        <h1>Aproveite na TV.</h1>
-        <p>
-          Assista em Smart TVs, PlayStation, Xbox, Chromecast, Apple TV,
-          aparelhos de Blu-ray e outros dispositivos.
-        </p>
-      </div>
-      <div>
-        <img src={Motivo1} alt="Motivo 1" />
-      </div>
-    </section>
-    <hr className="divisor" />
+    </section> */}
+    <SectionMotivos 
+      styleClass="motivos" title="Aproveite na TV." 
+      description="Assista em Smart TVs, PlayStation, Xbox, Chromecast, Apple TV, aparelhos de Blu-ray e outros dispositivos." 
+      image={Motivo1} 
+      imageAlt="Motivo 1" 
+    />
     </div>
   );
 }
