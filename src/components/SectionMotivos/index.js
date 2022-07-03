@@ -1,17 +1,17 @@
 import "./style.css";
 
-function SectionMotivos(props){
+function SectionMotivos({title, description, image, imageAlt, alterna}){
     return(
         <div>
-            <section className={props.styleClass}>
+            <section className={`motivos ${alterna && "alterna"}`}>
                 <div>
-                    <h1>{props.title}</h1>
+                    <h1>{title}</h1>
                     <p>
-                        {props.description}
+                        {description}
                     </p>
                 </div>
                 <div>
-                    <img src={props.image} alt={props.imageAlt} />
+                    <img src={image} alt={imageAlt} />
                  </div>
             </section>
         </div>  
