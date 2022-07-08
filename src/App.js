@@ -11,6 +11,8 @@ import MOTIVOS from "./constants/motivos";
 function App() {
   const Title = <h1>Título</h1>;
   const idioma = "PT";
+  // const Ola = () => alert("Oi, tudo bem?");
+
   return (
     <div>
         <header>
@@ -26,6 +28,7 @@ function App() {
         </div>
       </header>
       <section id="banner">
+        {/* <h1 onMouseOver={Ola}> */}
         <h1>
           Filmes, séries e muito <br />
           mais. Sem limites.
@@ -41,6 +44,7 @@ function App() {
         </Card> */}
         <div>
           <input type="email" placeholder="Email" />
+          {/* <Button variante="alert" text="Vamos Lá" onClick={Ola} /> */}
           <Button variante="alert" text="Vamos Lá" />
         </div>
       </section>
