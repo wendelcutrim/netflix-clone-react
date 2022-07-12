@@ -25,7 +25,7 @@ function SectionMotivos({title, description, image, imageAlt, alterna}){
                     </p>
                 </div>
                 <div>
-                    <img src={image} alt={imageAlt} onMouseOver={zoomIn} onMouseLeave={zoomOut} />
+                    <img src={image} alt={imageAlt} onMouseOver={zoomIn} onMouseOut={zoomOut} />
                  </div>
             </section>
         </div>  

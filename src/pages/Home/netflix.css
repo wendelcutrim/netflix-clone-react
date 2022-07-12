@@ -58,7 +58,7 @@ header #login select option {
 } */
 
 section#banner {
-  background-image: url("./assets/img/banner.jpg");
+  background-image: url("../../assets/img/banner.jpg");
   color: #fff;
   height: 80vh;
   display: flex;
