@@ -4,35 +4,18 @@ import Header from "../../components/Header";
 import Filme from "../../components/Filme";
 
 export default function Movies() {
-    const [movies, setMovies] = useState([
-        {
-            title:"Teste",
-            length:"1h",
-            data:"2022",
-            poster:"https://br.web.img3.acsta.net/pictures/17/05/29/23/31/530814.jpg"
-        },
-        {
-            title:"Teste",
-            length:"1h",
-            data:"2022",
-            poster:"https://br.web.img3.acsta.net/pictures/17/05/29/23/31/530814.jpg"
-        },
-        {
-            title:"Teste",
-            length:"1h",
-            data:"2022",
-            poster:"https://br.web.img3.acsta.net/pictures/17/05/29/23/31/530814.jpg"
-        }
-    ]);
+    const [movies, setMovies] = useState([]);
 
-    function addMovie() {
-        const newMovie = {
-            title:"Teste estado",
-            length:"5h",
-            data:"2020",
-            poster:"https://br.web.img3.acsta.net/pictures/17/05/29/23/31/530814.jpg"
-        }
-        setMovies([newMovie, ...movies])
+    async function addMovie() {
+        const response = await fetch("https://api.themoviedb.org/3/movie/popular", {
+            headers: {
+                Authorization: "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJiZmMzYThkNTMwZjE5ODZhNjViZjRkMjVmY2IzMTYwYSIsInN1YiI6IjYxYTAyYmE0M2Q0ZDk2MDA2NDA1Yzc1MiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.mXPl6EIQHahdcnQYnj44VtTufrND-B11fMBENArvKvA"
+            }
+        });
+        
+        const data = await response.json();
+
+        setMovies([...data.results, ...movies])
     }
 
 
@@ -41,24 +24,18 @@ export default function Movies() {
         <main id="movies">
             <Header />
             <div className="movies-list">
-            <button onClick={addMovie}>Adicionar Filme:</button>
+            <button onClick={addMovie}>Listar filmes</button>
                 {movies.map((movie, index) => {
                         return(
                             <Filme
                                 key={index}
-                                title={movie.title}
-                                length={movie.length}
-                                data={movie.data}
-                                poster={movie.poster}
+                                title={movie.original_title}
+                                length={movie.vote_average}
+                                data={movie.release_date}
+                                poster={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`}
                             />
                         );  
                     })}
-               {/*  <Filme
-                    title="Teste"
-                    length="1h"
-                    data="2022"
-                    poster="https://br.web.img3.acsta.net/pictures/17/05/29/23/31/530814.jpg"
-                /> */}
             </div>
         </main>
     );
