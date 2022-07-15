@@ -4,14 +4,14 @@ function SectionMotivos({title, description, image, imageAlt, alterna}){
     const zoomIn = (event) => {
         console.log(event.target);
         const {target: img} = event;
-        img.style = "transform: scale(1.5); cursor: pointer; transition: 1s all"
+        img.style = "transform: scale(1.2); cursor: pointer; transition: 1s all"
 
     }
 
     const zoomOut = (event) => {
         console.log(event.target);
         const {target: img} = event;
-        img.style = "transform: scale(1); transition: 1s all"
+        img.style = "transform: scale(1.0); transition: 1s all"
 
     }
 

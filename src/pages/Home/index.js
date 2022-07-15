@@ -1,14 +1,11 @@
 import "./netflix.css";
-import Logo from "../../assets/img/logo.png";
 import Motivo1 from "../../assets/img/motivo-1.png";
-
 import Button from "../../components/Button";
 import SectionMotivos from "../../components/SectionMotivos";
 import Divisor from "../../components/Divisor";
-import Card from "../../components/Card";
-import MOTIVOS from "../../constants/motivos";
+import Header from "../../components/Header";
 
-import { Link } from "react-router-dom";
+import MOTIVOS from "../../constants/motivos";
 
 function Home() {
   const Title = <h1>Título</h1>;
@@ -17,20 +14,7 @@ function Home() {
 
   return (
     <div>
-        <header>
-        <div>
-          <img src={Logo} alt="Logo" />
-          <Link to="/about">Link para About com a lib </Link>
-          <a href="/about">Link para About com tag a</a>
-        </div>
-        <div id="login">
-          <select id="idioma">
-            <option value="PT">Português</option>
-            <option value="ING">Ingles</option>
-          </select>
-          <Button variante="success" text="Entrar"/>
-        </div>
-      </header>
+      <Header />
       <section id="banner">
         {/* <h1 onMouseOver={Ola}> */}
         <h1>
