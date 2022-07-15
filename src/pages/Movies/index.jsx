@@ -7,9 +7,9 @@ export default function Movies() {
     const [movies, setMovies] = useState([]);
 
     async function addMovie() {
-        const response = await fetch("https://api.themoviedb.org/3/movie/popular", {
+        const response = await fetch(`${process.env.REACT_APP_BASE_TMDB_URL}/movie/popular`, {
             headers: {
-                Authorization: "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJiZmMzYThkNTMwZjE5ODZhNjViZjRkMjVmY2IzMTYwYSIsInN1YiI6IjYxYTAyYmE0M2Q0ZDk2MDA2NDA1Yzc1MiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.mXPl6EIQHahdcnQYnj44VtTufrND-B11fMBENArvKvA"
+                Authorization: `Bearer ${process.env.REACT_APP_API_TMDB_KEY}`
             }
         });
         
@@ -32,7 +32,7 @@ export default function Movies() {
                                 title={movie.original_title}
                                 length={movie.vote_average}
                                 data={movie.release_date}
-                                poster={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`}
+                                poster={`${process.env.REACT_APP_API_TMDB_IMG_URL}/${movie.poster_path}`}
                             />
                         );  
                     })}
