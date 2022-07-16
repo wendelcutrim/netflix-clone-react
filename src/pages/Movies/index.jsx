@@ -9,7 +9,7 @@ export default function Movies() {
     async function addMovie() {
         const response = await fetch(`${process.env.REACT_APP_BASE_TMDB_URL}/movie/popular`, {
             headers: {
-                Authorization: `Bearer ${process.env.REACT_APP_API_TMDB_KEY}`
+                Authorization: `Bearer ${process.env.REACT_APP_API_TMDB_KEY}`,
             }
         });
         
