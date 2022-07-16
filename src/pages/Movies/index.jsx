@@ -1,7 +1,7 @@
 import "./style.css";
 import { useState } from "react";
 import Header from "../../components/Header";
-import Filme from "../../components/Filme";
+import Movie from "../../components/Movie";
 
 export default function Movies() {
     const [movies, setMovies] = useState([]);
@@ -25,12 +25,12 @@ export default function Movies() {
             <Header />
             <div className="movies-list">
             <button onClick={addMovie}>Listar filmes</button>
-                {movies.map((movie, index) => {
+                {movies.map((movie) => {
                         return(
-                            <Filme
-                                key={index}
+                            <Movie
+                                key={movie.id}
                                 title={movie.original_title}
-                                length={movie.vote_average}
+                                votes={movie.vote_average}
                                 data={movie.release_date}
                                 poster={`${process.env.REACT_APP_API_TMDB_IMG_URL}/${movie.poster_path}`}
                             />
