@@ -1,12 +1,28 @@
 import "./style.css";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Header from "../../components/Header";
 import Movie from "../../components/Movie";
 
 export default function Movies() {
     const [movies, setMovies] = useState([]);
 
-    async function addMovie() {
+    useEffect(() => {
+        async function fetchData() {
+            const response = await fetch(`${process.env.REACT_APP_BASE_TMDB_URL}/movie/popular`, {
+                headers: {
+                    Authorization: `Bearer ${process.env.REACT_APP_API_TMDB_KEY}`,
+                }
+            });
+            
+            const data = await response.json();
+    
+            setMovies([...data.results])
+        }
+
+        fetchData()
+    
+    }, [])
+   /*  async function addMovie() {
         const response = await fetch(`${process.env.REACT_APP_BASE_TMDB_URL}/movie/popular`, {
             headers: {
                 Authorization: `Bearer ${process.env.REACT_APP_API_TMDB_KEY}`,
@@ -17,14 +33,14 @@ export default function Movies() {
 
         setMovies([...data.results, ...movies])
     }
-
+ */
 
 
     return(
         <main id="movies">
             <Header />
             <div className="movies-list">
-            <button onClick={addMovie}>Listar filmes</button>
+           {/*  <button onClick={addMovie}>Listar filmes</button> */}
                 {movies.map((movie) => {
                         return(
                             <Movie
